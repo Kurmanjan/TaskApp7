@@ -7,13 +7,22 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
+import com.geektech.taskapp.MainActivity;
 import com.geektech.taskapp.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class OnBoardActivity extends AppCompatActivity {
 
+
     private ViewPager viewPager;
+    TabLayout tabLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +30,15 @@ public class OnBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_board);
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+        tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager, true);
+    }
+
+    public void OnSkip(View view) {
+        SharedPreferences preferences = getSharedPreferences("isShown", MODE_PRIVATE);
+        preferences.edit().putBoolean("isShown", true).apply();
+        startActivity(new Intent(this,MainActivity.class));
+        finish();
     }
 }
 

@@ -37,16 +37,19 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textView;
 
         private TextView textTitle;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.textTitle);
+            textView=itemView.findViewById(R.id.textDesc);
         }
 
         public void bind(Task task) {
             textTitle.setText(task.getTitle());
+            textView.setText(task.getDesc());
 
             //TODO
         }
