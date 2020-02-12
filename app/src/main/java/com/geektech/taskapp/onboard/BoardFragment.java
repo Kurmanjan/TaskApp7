@@ -70,19 +70,19 @@ Button button;
                 imageView.setImageResource(R.drawable.board1);
                 button.setVisibility(View.INVISIBLE);
                 Log.e("---------", frg+"");
-                frg.setBackgroundResource(colorRed);
+                frg.setBackgroundResource(R.drawable.board_1);
                 break;
             case 1:
                 textView.setText("Как дела?");
                 imageView.setImageResource(R.drawable.board);
                 button.setVisibility(View.INVISIBLE);
-                frg.setBackgroundResource(colorYellow);
+                frg.setBackgroundResource(R.drawable.board_2);
                 break;
             case 2:
                 textView.setText("Че делаешь?");
                 imageView.setImageResource(R.drawable.board3);
                 button.setVisibility(View.VISIBLE);
-                frg.setBackgroundResource(colorGreen);
+                frg.setBackgroundResource(R.drawable.board_3);
                 break;
         }
     }
