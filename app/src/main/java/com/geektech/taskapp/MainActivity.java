@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.bumptech.glide.load.model.Headers;
+import com.geektech.taskapp.auth.PhoneActivity;
 import com.geektech.taskapp.onboard.OnBoardActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -24,6 +25,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -54,7 +56,15 @@ public class MainActivity extends AppCompatActivity {
            startActivity(new Intent(this, OnBoardActivity.class));
             finish();
             return;
-       }
+       }if (FirebaseAuth.getInstance().getCurrentUser()==null){
+
+           startActivity(new Intent(MainActivity.this, PhoneActivity.class));
+           finish();
+           return;
+
+
+
+        }
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
 

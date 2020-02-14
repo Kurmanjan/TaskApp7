@@ -43,7 +43,6 @@
             android:background="@drawable/bc_edit"
             android:padding="8dp"
             android:hint="описания "
-            android:drawableStart="@drawable/iconfinder_TaskStroke_1737368"
             android:layout_marginBottom="4dp"
             android:layout_height="wrap_content"/>
 
